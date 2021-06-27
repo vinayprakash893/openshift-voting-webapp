@@ -1,0 +1,1 @@
+oc process -f templates/redis-ephemeral-template.yaml -p REDIS_PASSWORD=redis | oc apply -f -
