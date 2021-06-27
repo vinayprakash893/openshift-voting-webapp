@@ -76,12 +76,20 @@ $ oc process -f openshift-specifications/templates/postgresql-ephemeral-template
 $ oc process -f openshift-specifications/templates/redis-ephemeral-template.yaml \
     -p REDIS_PASSWORD=redis | oc apply -f - -n voting-app
 ```
+```bash
+# Deploying Redis and Postgres using script
+$ sh oc-process-postgresSQL.sh
+$ sh oc-process-redis.sh
+```
+
 
 Initialize voting-app project with common objects for the three different ways deployment modes: 
 ```bash
 # Deploying services, routes and imagestreams
 $ oc apply -f openshift-specifications/ -n voting-app
 ```
+
+
 
 What we will deploy:
 ![deployments](docs/img/deployments.png)
