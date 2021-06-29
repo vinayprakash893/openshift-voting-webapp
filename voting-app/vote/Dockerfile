@@ -12,12 +12,12 @@ WORKDIR /app
 
 ENV PATH="/app/.local/bin/:${PATH}"
 
-RUN useradd -u 1001 -r -g 0 -d /app -s /sbin/nologin \
-    -c "Default Application User" default && \
-    chown -R 1001:0 /app && \
-    chmod -R g+rw /app
+#RUN useradd -u 1001 -r -g 0 -d /app -s /sbin/nologin \
+#    -c "Default Application User" default && \
+#    chown -R 1001:0 /app && \
+#    chmod -R g+rw /app
 
-USER 1001
+#USER 1001
 
 # Install our requirements.txt
 COPY src/requirements.txt /app/requirements.txt
