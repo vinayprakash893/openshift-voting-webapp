@@ -17,4 +17,4 @@ spec:
     spec:
       containers:
         - name: vote
-          image: mgrillet/vote:latest
+          image: quay.apps.lz-np2.ent-ocp4-useast1.aws.internal.das/an222685ad/vote:latest
