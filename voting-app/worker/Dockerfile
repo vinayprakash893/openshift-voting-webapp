@@ -14,12 +14,12 @@ FROM openjdk:8-jre
 
 WORKDIR /app
 
-RUN useradd -u 1001 -r -g 0 -d /app -s /sbin/nologin \
-    -c "Default Application User" default && \
-    chown -R 1001:0 /app && \
-    chmod -R g+rw /app
+#RUN useradd -u 1001 -r -g 0 -d /app -s /sbin/nologin \
+#    -c "Default Application User" default && \
+#    chown -R 1001:0 /app && \
+#    chmod -R g+rw /app
 
-USER 1001
+#USER 1001
 
 COPY --from=build /code/target/worker-jar-with-dependencies.jar /
 
