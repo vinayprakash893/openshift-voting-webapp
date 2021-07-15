@@ -1,0 +1,19 @@
+﻿kind: Service
+apiVersion: v1
+metadata:
+  name: redis
+  labels:
+    template: redis-ephemeral-template
+spec:
+  ports:
+    - name: redis
+      protocol: TCP
+      port: 6379
+      targetPort: 6379
+  selector:
+    name: redis
+  #clusterIP: 172.30.242.110
+  #type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}

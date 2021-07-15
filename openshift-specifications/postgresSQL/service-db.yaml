@@ -1,0 +1,19 @@
+﻿kind: Service
+apiVersion: v1
+metadata:
+  name: db
+  labels:
+    template: postgresql-ephemeral-template
+spec:
+  ports:
+    - name: postgresql
+      protocol: TCP
+      port: 5432
+      targetPort: 5432
+  selector:
+    name: db
+  #clusterIP: 172.30.88.83
+  #type: ClusterIP
+  sessionAffinity: None
+status:
+  loadBalancer: {}
